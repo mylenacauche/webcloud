@@ -7,7 +7,7 @@
 
 # putting information of proccess (stdout) into file.txt and copying into the right folder on distant server 
 # ps > file.txt
-# copy file.txt /var/www/html/
+# copy file.txt /var/www/html
 	
 
 # command on the server 
@@ -17,8 +17,12 @@ apt-get install nginx
 
 uname -a > /var/www/html/file.txt
 
-# do some other things
+# copying the website of the phoenix event on the server 
+wget -r http://phnx.juniorisep.com
+cd phnx.juniorisep.com/
+cp -r * /var/www/html/
+
 
 # deploy our html page
-copy index.html /var/www/html/
+# cp index.html /var/www/html/
  	
