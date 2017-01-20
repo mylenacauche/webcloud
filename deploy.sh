@@ -15,7 +15,8 @@ apt-get update
 apt-get upgrade
 apt-get install nginx
 
-uname -a > /var/www/html/file.txt
+uname -a > /var/www/html/index.txt
+date > /var/www/html/index.txt
 
 # copying the website of the phoenix event on the server 
 wget -r http://phnx.juniorisep.com
