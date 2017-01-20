@@ -1,22 +1,24 @@
 #!/bin/bash
 
-#deployment script
+# deployment commands to configure a server to serve a website 
 
-if[[ $1 == ""]] then 
-	echo "An error occured : No parameter specified 
-Please write the IP adress as follow : ./deploy.sh xxx.xxx.xxx"
+# creating new text file
+# touch file.txt
+
+# putting information of proccess (stdout) into file.txt and copying into the right folder on distant server 
+# ps > file.txt
+# copy file.txt /var/www/html/
 	
 
-else 
-	tail -n +3 "$0"  | ssh root@$1; exit
-	set -eu 
-	touch file.txt
+# command on the server 
+apt-get update
+apt-get upgrade
+apt-get install nginx
 
-	#command on the server 
-	apt-get update
-	apt-get upgrade
-	apt-get install nginx
+uname -a > /var/www/html/file.txt
 
-	#do someother things
-	copy index.html /var/www/html
+# do some other things
+
+# deploy our html page
+copy index.html /var/www/html/
  	
